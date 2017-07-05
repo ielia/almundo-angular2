@@ -1,5 +1,8 @@
 <div class="hotel-list">
   <div class="hotel-list-item" *ngFor="let hotel of hotels">
+    <div class="hotel-advertised" *ngIf="hotel.advertised">¡Hotel recomendado!</div>
+    <div class="hotel-discount" *ngIf="hotel.discount">{{hotel.discount * 100}}%<br/>OFF</div>
+    <div class="hotel-advertised-shadow" *ngIf="hotel.discount"></div>
     <img class="hotel-picture" [src]="hotel.image"/>
     <div class="hotel-description">
       <span class="hotel-name">{{hotel.name}}</span>

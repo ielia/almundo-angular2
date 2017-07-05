@@ -1,6 +1,7 @@
 .view-map {
   background-color: white;
   box-shadow: 2px 2px 2px #e2e2e2;
+  text-align: center;
   width: 250px;
 }
 
@@ -11,8 +12,10 @@
 }
 
 .map-link {
+  display: inline-block;
   font-size: 12px;
   height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
   width: 100%;
-  vertical-align: text-top;
 }

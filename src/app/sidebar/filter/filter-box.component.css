@@ -11,10 +11,32 @@
 .filter-box-title {
   font-size: 12px;
   font-weight: bold;
+  line-height: 15px;
+  display: inline-block;
 }
 
 .filter-box-open {
+  border: 5px solid transparent;
+  border-top: 5px solid #4f82c6;
+  clear: both;
+  display: none;
+  float: right;
+  height: 0;
+  margin-left: 220px;
+  margin-top: 2px;
+  position: absolute;
+  width: 0;
 }
 
 .filter-box-close {
+  border: 5px solid transparent;
+  border-bottom: 5px solid #4f82c6;
+  clear: both;
+  display: block;
+  float: right;
+  height: 0;
+  margin-left: 220px;
+  margin-top: 2px;
+  position: absolute;
+  width: 0;
 }
