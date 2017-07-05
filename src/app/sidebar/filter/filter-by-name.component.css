@@ -1,0 +1,15 @@
+input {
+  border: 1px inset;
+  display: inline-block;
+  height: 20px;
+  margin: 5px 10px;
+  width: 120px;
+}
+
+button {
+  display: inline-block;
+  font-size: 12px;
+  height: 20px;
+  margin: 5px 0;
+  width: 60px;
+}

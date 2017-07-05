@@ -1,0 +1,26 @@
+<div class="hotel-list">
+  <div class="hotel-list-item" *ngFor="let hotel of hotels">
+    <img class="hotel-picture" [src]="hotel.image"/>
+    <div class="hotel-description">
+      <span class="hotel-name">{{hotel.name}}</span>
+      <span class="stars">{{hotel.stars}}</span>
+      <span class="room-only">Solo la habitación</span>
+      <div class="amenities">
+        <span class="amenity" *ngFor="let amenity of hotel.amenities">|{{amenity}}|</span>
+      </div>
+    </div>
+    <div class="stay">
+      <span class="stay-indication">Precio por noche por habitación</span>
+      <div class="price">
+        <span class="currency">{{hotel.price.currency}}</span><span class="price-amount">{{hotel.price.amount * (1 - (hotel.discount || 0))}}</span>
+      </div>
+      <div class="full-price" *ngIf="hotel.discount">
+        <span>Precio sin promo</span> <span class="full-currency">{{hotel.price.currency}}</span> <span class="full-amount">{{hotel.price.amount}}</span>
+      </div>
+      <span class="price-note">Impuestos y tasas no incluidos</span>
+      <button class="view-hotel">Ver hotel</button>
+      <span class="payment-option-note" *ngIf="hotel.paymentTypes.indexOf('inst') >= 0">Pagá en cuotas</span>
+      <span class="payment-option-note" *ngIf="hotel.paymentTypes.indexOf('dest') >= 0">Pagá en destino</span>
+    </div>
+  </div>
+</div>

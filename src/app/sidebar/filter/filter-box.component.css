@@ -1,0 +1,20 @@
+.filter-box {
+  background-color: white;
+  box-shadow: 2px 2px 2px #e2e2e2;
+  width: 250px;
+}
+
+.filter-box-head {
+  padding: 5px 10px;
+}
+
+.filter-box-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.filter-box-open {
+}
+
+.filter-box-close {
+}

@@ -1,0 +1,15 @@
+.breadcrumbs {
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+}
+
+.breadcrumbs span {
+}
+
+.breadcrumbs a {
+  color: #4f82c6;
+}

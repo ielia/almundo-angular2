@@ -1,0 +1,9 @@
+.sidebar {
+  float: left;
+  position: relative;
+  width: 250px;
+}
+
+* {
+  text-align: left;
+}

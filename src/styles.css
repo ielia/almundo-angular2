@@ -1,0 +1,32 @@
+* {
+  color: #444444;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+html, body {
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  display: inline-block;
+}
+
+button {
+  background-color: #002c77;
+  border: 0;
+  border-bottom: 2px solid #00215a;
+  border-radius: 4px;
+  color: white;
+}
+
+.toggler {
+  color: #4f82c6;
+}

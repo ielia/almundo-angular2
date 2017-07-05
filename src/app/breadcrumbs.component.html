@@ -1,0 +1,4 @@
+<div class="breadcrumbs">
+  <span><a href="/">Home</a></span>
+  <span *ngFor="let crumb of crumbs"> / <a *ngIf="crumb.url" href="{{crumb.url}}">{{crumb.text}}</a><span *ngIf="!crumb.url">{{crumb.text}}</span></span>
+</div>

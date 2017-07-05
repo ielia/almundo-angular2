@@ -1,0 +1,37 @@
+.search-box {
+  border: 1px solid #cccccc;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: left;
+  width: 980px;
+}
+
+.search-head{
+  display: block;
+  font-size: 16px;
+}
+
+.search-body {
+  font-size: 12px;
+}
+
+.search-location {
+
+}
+
+.search-in-date {
+
+}
+
+.search-out-date {
+
+}
+
+.search-guests {
+
+}
+
+.search-box a {
+
+}

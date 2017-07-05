@@ -1,0 +1,20 @@
+.top-nav {
+  background-image: url(https://images.almundo.com/205/image/upload/q_auto/v1474474096/static/components/header-bg.jpg);
+  border: 1px solid #374d64;
+  color: white;
+  display: block;
+  opacity: .75;
+  text-align: center;
+}
+
+.top-nav li {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 90px;
+}
+
+.top-nav li a {
+  color: white;
+}

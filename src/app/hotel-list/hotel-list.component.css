@@ -1,0 +1,140 @@
+.hotel-list {
+  display: inline-block;
+  float: right;
+  margin-left: 10px;
+  position: relative;
+  width: 740px;
+}
+
+.hotel-list-item {
+  background: white;
+  box-shadow: 2px 2px 2px #e2e2e2;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 5px;
+  position: relative;
+  width: 730px;
+}
+.hotel-list-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.hotel-picture {
+  background-color: #D0D0D0;
+  float: left;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 220px;
+}
+
+.hotel-description {
+  float: left;
+  height: 190px;
+  margin: 0;
+  padding: 5px 10px;
+  position: relative;
+  text-align: left;
+  width: 300px;
+}
+
+.hotel-name {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.stars {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.room-only {
+  color: #f18400;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.amenities {
+  display: block;
+  position: relative;
+}
+
+.stay {
+  border-left: 1px dashed #cccccc;
+  float: left;
+  font-size: 10px;
+  height: 190px;
+  margin: 0;
+  padding: 5px;
+  position: relative;
+  width: 179px;
+}
+
+.stay div, .stay span {
+  display: block;
+}
+
+.stay-indication {}
+
+.price {
+  height: 40px;
+  margin: 10px;
+}
+
+.currency {
+  color: #f18400;
+  display: inline-block !important;
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.price-amount {
+  color: #f18400;
+  display: inline-block !important;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.full-price {}
+
+.full-price span {
+  display: inline-block;
+}
+
+.full-currency {}
+
+.full-amount {
+  font-weight: bold;
+}
+
+.price-note {
+  margin-top: 5px;
+}
+
+button.view-hotel {
+  height: 30px;
+  margin: 10px;
+  width: 150px;
+}
+
+.payment-option-note {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.payment-option-note:last-of-type {
+  margin-bottom: 0;
+}
