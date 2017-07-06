@@ -1,3 +1,3 @@
 <app-filter-box classPrefix="filter-by-name" title="Nombre de hotel">
-  <input name="hotel-name" /><button class="hotel-name-submit">Aceptar</button>
+  <input name="hotel-name" [value]="matchName" (change)="changedMatchName($event.target.value)"/><button class="hotel-name-submit" (click)="updateFilter()">Aceptar</button>
 </app-filter-box>

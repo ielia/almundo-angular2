@@ -15,11 +15,12 @@ import 'rxjs/add/operator/map';
 export class AvailabilityService {
   private filterName: String;
   private filterPriceRange: PriceRange;
-  private filterStars: Number[] = [1, 2, 3, 4, 5];
+  private filterStars: Number[] = [];
 
   private allHotels: Observable<Hotel[]>;
 
   private filteredHotels: Subject<Hotel[]> = new Subject();
+  private preFilteredHotels: Subject<Hotel[]> = new Subject();
   private starred: Subject<Number[]> = new Subject();
   private totalPriceRange: Subject<PriceRange> = new Subject();
 
@@ -39,45 +40,69 @@ export class AvailabilityService {
 
   public init() {
     this.allHotels = this.internalGetHotels();
-    this.updateTotalPriceRange();
-    this.updateHotels();
-    this.filteredHotels.subscribe(hotels => {
-      this.starred.next(hotels.reduce((starred, hotel) => { ++starred[Number(hotel.stars)]; return starred; }, [0, 0, 0, 0, 0]));
-    });
+    this.subscribeTotalPriceRangeToAllHotels();
+    this.subscribePreFilteredHotelsToAllHotels();
+    this.subscribeStarredToPreFilteredHotels();
+    this.subscribeFilteredHotelsToPreFilteredHotels();
+  }
+
+  public setFilterName(filterName: String) {
+    this.filterName = filterName;
+    // this.preFilteredHotels.next(false);
+    this.subscribePreFilteredHotelsToAllHotels();
   }
 
   public setFilterPriceRange(arrayedRange: Number[]) {
     this.filterPriceRange = new PriceRange(arrayedRange[0], arrayedRange[1]);
-    this.updateHotels();
+    // this.preFilteredHotels.next(false);
+    this.subscribePreFilteredHotelsToAllHotels();
   }
 
   public setFilterStars(stars: Number[]) {
     this.filterStars = stars;
-    this.updateHotels();
+    // this.preFilteredHotels.next(false);
+    this.subscribePreFilteredHotelsToAllHotels();
   }
 
-  private updateHotels() {
-    this.allHotels.subscribe(hotels => {
-      this.filteredHotels.next(this.filterPriceRange ?
-        hotels.filter(hotel =>
-          hotel.price.amount >= this.filterPriceRange.lowerBound &&
-          hotel.price.amount <= this.filterPriceRange.upperBound &&
-          this.filterStars.indexOf(Number(hotel.stars)) >= 0 &&
-          (!this.filterName || hotel.name.toUpperCase().indexOf(this.filterName.toLowerCase()) >= 0)) :
-        hotels
-      );
+  private subscribeFilteredHotelsToPreFilteredHotels() {
+    this.preFilteredHotels.subscribe(hotels => {
+      // console.log('>> FILTERED: ' + hotels);
+      // this.filteredHotels.subscribe(hs => console.log('<< FILTERED: ' + hs));
+      if (hotels) { this.filteredHotels.next(this.filterStars.length ? hotels.filter(hotel => this.filterStars.indexOf(Number(hotel.stars)) >= 0) : hotels); }
     });
   }
 
-  private updateTotalPriceRange() {
+  private subscribeStarredToPreFilteredHotels() {
+    this.preFilteredHotels.subscribe(hotels => {
+      // console.log('>> STARRED: ' + hotels);
+      // this.starred.subscribe(s => console.log('<< STARRED: ' + s));
+      if (hotels) { this.starred.next(hotels.reduce((starred, hotel) => { ++starred[Number(hotel.stars) - 1]; return starred; }, [0, 0, 0, 0, 0])); }
+    });
+  }
+
+  private subscribeTotalPriceRangeToAllHotels() {
     this.allHotels.subscribe(hotels => {
-      this.totalPriceRange.next(hotels.reduce((pr, h) => pr.addPrice(h.price.amount), new PriceRange()));
+      // console.log('>> TOTAL PRICE: ' + hotels);
+      // this.totalPriceRange.subscribe(pr => console.log('<< TOTAL PRICE: ' + pr.lowerBound + '~' + pr.upperBound));
+      if (hotels) { this.totalPriceRange.next(hotels.reduce((priceRange, h) => priceRange.addPrice(h.price.amount), new PriceRange())); }
+    });
+  }
+
+  private subscribePreFilteredHotelsToAllHotels() {
+    this.allHotels.subscribe(hotels => {
+      // console.log('>> PRE-FILTERED: ' + hotels);
+      // this.preFilteredHotels.subscribe(hs => console.log('<< PRE-FILTERED: ' + hs));
+      if (hotels) {
+        this.preFilteredHotels.next(
+          hotels.filter(hotel => hotel.inPriceRangeSafe(this.filterPriceRange) && hotel.matchesName(this.filterName))
+        );
+      }
     });
   }
 
   private internalGetHotels(): Observable<Hotel[]> {
     return this.http.get(environment.apiURL + '/availability/Madrid/2017/01/01/2018/01/01/2')
-      .map((res: Response) => res.json().instances)
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+      .map((res: Response) => res.json().instances.map(hotel => new Hotel(hotel)))
+      .catch((error: any) => Observable.throw((error.json && error.json().error) || error || 'Server error'));
   }
 }
