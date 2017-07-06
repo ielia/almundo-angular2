@@ -1,11 +1,11 @@
 <div class="filter-box {{classPrefix}}">
-  <div class="filter-box-head {{classPrefix}}-head">
-    <div class="filter-box-open"></div>
-    <div class="filter-box-close"></div>
+  <div class="filter-box-head {{classPrefix}}-head" (click)="onToggleBody()">
+    <div class="{{visibleBody ? 'display-none' : ''}} filter-box-open"></div>
+    <div class="{{visibleBody ? '' : 'display-none'}} filter-box-close"></div>
     <i class="filter-box-icon {{classPrefix}}-icon"></i>
-    <span class="toggler filter-box-title {{classPrefix}}-title">Nombre del hotel</span>
+    <span class="toggler filter-box-title {{classPrefix}}-title">{{title}}</span>
   </div>
-  <div class="filter-box-body {{classPrefix}}-body">
+  <div class="{{visibleBody ? '' : 'display-none'}} filter-box-body {{classPrefix}}-body">
     <ng-content></ng-content>
   </div>
 </div>

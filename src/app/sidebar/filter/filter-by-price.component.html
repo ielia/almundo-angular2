@@ -1,0 +1,7 @@
+<app-filter-box classPrefix="filter-by-price" title="Precio por noche">
+  <div class="slider">
+    <nouislider [connect]="true" [min]="sliderMin" [max]="sliderMax" [step]="1" [(ngModel)]="sliderRange" (ngModelChange)="changedRange()"></nouislider>
+    <div class="min"><span>${{sliderRange[0]}}</span></div>
+    <div class="max"><span>${{sliderRange[1]}}</span></div>
+  </div>
+</app-filter-box>

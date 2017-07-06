@@ -1,0 +1,8 @@
+<app-filter-box classPrefix="filter-by-stars" title="Estrellas">
+  <div class="stars">
+    <label class="stars-all"><input type="checkbox" [checked]="allChecked" (change)="toggleStars()"/>Todas las estrellas ({{getTotal()}})</label>
+    <label class="stars-{{i}}" *ngFor="let c of checkboxes; let i = index">
+      <input type="checkbox" [checked]="checkboxes[i]" (change)="changedStars()"/>{{i+1}} ({{starred[i]}})
+    </label>
+  </div>
+</app-filter-box>

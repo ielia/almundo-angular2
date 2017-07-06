@@ -1,22 +1,15 @@
-* {
-  color: #444444;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
+@import "../node_modules/nouislider/distribute/nouislider.min.css";
 
 html, body {
   background-color: #f4f4f4;
+  color: #444444;
   font-family: 'Roboto', sans-serif;
+  position: relative;
   text-align: center;
 }
 
 a {
   text-decoration: none;
-}
-
-div {
-  display: inline-block;
 }
 
 button {

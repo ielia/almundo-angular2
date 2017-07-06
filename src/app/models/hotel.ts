@@ -29,4 +29,8 @@ export class Hotel {
     public paymentTypes: String[],
     public advertised: Boolean
   ) {}
+
+  public getPromoPrice(): Number {
+    return Number(this.price.amount) * (1 - Number(this.discount || 0));
+  }
 }

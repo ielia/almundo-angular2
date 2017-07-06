@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class FilterBoxComponent {
   @Input() classPrefix = '';
+  @Input() title = '';
+  public visibleBody = true;
+
+  onToggleBody() {
+    this.visibleBody = !this.visibleBody;
+  }
 }

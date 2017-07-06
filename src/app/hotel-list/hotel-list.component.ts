@@ -9,12 +9,13 @@ import { Hotel } from '../models/hotel';
 })
 export class HotelListComponent implements OnInit {
   hotels: Hotel[];
-  constructor(private availabilityService: AvailabilityService) {
-  }
+
+  constructor(private availabilityService: AvailabilityService) {}
 
   ngOnInit(): void {
+    this.availabilityService.init();
     this.availabilityService.getHotels().subscribe(
-      hotels => { console.log(JSON.stringify(hotels)); this.hotels = hotels; },
+      hotels => { this.hotels = hotels; },
       err => {
         console.log(err);
       }
