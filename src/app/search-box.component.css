@@ -7,7 +7,7 @@
   width: 980px;
 }
 
-.search-head{
+.search-head {
   display: block;
   font-size: 16px;
 }
@@ -16,22 +16,31 @@
   font-size: 12px;
 }
 
-.search-location {
-
+.search-spec {
+  display: inline-block;
 }
 
-.search-in-date {
+.search-location {}
 
-}
+.search-in-date {}
 
-.search-out-date {
+.search-out-date {}
 
-}
+.search-guests {}
 
-.search-guests {
+.search-box a {}
 
-}
-
-.search-box a {
-
+@media(max-width: 1039px) {
+  .search-box {
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .search-head, .search-spec {
+    display: none;
+  }
 }

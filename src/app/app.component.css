@@ -5,3 +5,10 @@
   text-align: center;
   width: 1000px;
 }
+
+@media(max-width: 1039px) {
+  .bounding-box {
+    padding: 0;
+    width: 90%;
+  }
+}

@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
+// TODO: In case of pagination, we should delegate this logic to the API.
 // E.g.: {apiURL}/availability/Madrid/2017/01/01/2018/01/01/2?price=100-10000&stars=1,2,3,4,5
 
 @Injectable()

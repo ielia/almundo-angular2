@@ -1,15 +1,23 @@
 <div class="hotel-list">
+  <div class="order-by">
+    <label class="order-by-label">
+      <span class="order-by-span">Ordenar</span>
+      <select class="order-by-dropdown" name="order_by" (change)="setOrder($event.target.value)">
+        <option value="{{orderBy.value}}" *ngFor="let orderBy of orderByOptions">{{orderBy.text}}</option>
+      </select>
+    </label>
+  </div>
   <div class="hotel-list-item" *ngFor="let hotel of hotels">
     <div class="hotel-advertised" *ngIf="hotel.advertised">¡Hotel recomendado!</div>
     <div class="hotel-discount" *ngIf="hotel.discount">{{hotel.discount * 100}}%<br/>OFF</div>
-    <div class="hotel-advertised-shadow" *ngIf="hotel.discount"></div>
+    <div class="hotel-discount-shadow" *ngIf="hotel.discount"></div>
     <img class="hotel-picture" [src]="hotel.image"/>
     <div class="hotel-description">
       <span class="hotel-name">{{hotel.name}}</span>
       <span class="stars">{{hotel.stars}}</span>
       <span class="room-only">Solo la habitación</span>
       <div class="amenities">
-        <span class="amenity" *ngFor="let amenity of hotel.amenities">|{{amenity}}|</span>
+        <span class="amenity" *ngFor="let amenity of hotel.amenities">|{{amenity}}| </span>
       </div>
     </div>
     <div class="stay">

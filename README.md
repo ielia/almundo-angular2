@@ -1,5 +1,21 @@
 # almundo-angular2
 
+## Descripción
+
+Este proyecto representa sólo una página: Resultado y filtrado de la búsqueda de hoteles. No he tenido tiempo de cambiar
+la búsqueda a otra cosa, por lo que se mostrarán sólo hoteles de "Madrid". Las fechas y la cantidad de huéspedes son
+irrelevantes, ya que el back-end (la API) no filtra por ellos.
+
+He tomado ciertas decisiones por velocidad que, en un contexto real, no serían correctas, como por ejemplo, el filtrado
+rápido y el ordenamiento de hoteles. Toda funcionalidad de este tipo (nuevamente, dado un contexto real en el que los
+conjuntos de resultados son demasiado grandes) debería ser delegada a la API.
+
+No hay nada hecho de minificación ni ofuscación de código. Tampoco existen tests, cosa que en un contexto productivo no
+debería darse jamás. Además, faltan varios detalles visuales, aunque los layouts Mobile y XL se encuentran
+suficientemente presentables.
+
+# Instrucciones (las que se crearon con el proyecto, en inglés)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server

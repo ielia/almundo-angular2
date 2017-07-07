@@ -1,9 +1,17 @@
 .sidebar {
   float: left;
+  margin-top: 30px;
   position: relative;
   width: 250px;
 }
 
 * {
   text-align: left;
+}
+
+@media(max-width: 1039px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+  }
 }

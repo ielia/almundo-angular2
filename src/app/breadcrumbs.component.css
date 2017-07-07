@@ -13,3 +13,9 @@
 .breadcrumbs a {
   color: #4f82c6;
 }
+
+@media(max-width: 1039px) {
+  .breadcrumbs {
+    display: none;
+  }
+}

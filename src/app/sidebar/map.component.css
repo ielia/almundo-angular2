@@ -19,3 +19,17 @@
   vertical-align: middle;
   width: 100%;
 }
+
+@media(max-width: 1039px) {
+  .view-map {
+    background-color: transparent;
+    border-bottom: 1px solid #cccccc;
+    box-shadow: none;
+    line-height: 40px;
+    width: 100%;
+  }
+
+  .map-image {
+    display: none;
+  }
+}

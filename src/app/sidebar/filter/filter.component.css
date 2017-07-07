@@ -4,3 +4,23 @@
   font-weight: bold;
   margin: 10px 0 5px;
 }
+
+@media(max-width: 1039px) {
+  .filter {
+    text-align: center;
+  }
+
+  .filter > span {
+    border-bottom: 1px solid #cccccc;
+    color: #4f82c6;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .filter-body {
+    display: none;
+  }
+}

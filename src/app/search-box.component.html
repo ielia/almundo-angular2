@@ -1,10 +1,12 @@
 <div class="search-box">
   <span class="search-head">Hoteles disponibles para:</span>
-  <span class="search-body">
-    <span class="search-location">{{searchSpec.location}}</span> -
-    <span class="search-in-date">{{searchSpec.inDate | date: 'dd/MM/yyyy'}}</span> -
-    <span class="search-out-date">{{searchSpec.outDate | date: 'dd/MM/yyyy'}}</span> -
-    <span class="search-guests">{{searchSpec.guests}} huéspedes</span> -
+  <div class="search-body">
+    <div class="search-spec">
+      <span class="search-location">{{searchSpec.location}}</span> -
+      <span class="search-in-date">{{searchSpec.inDate | date: 'dd/MM/yyyy'}}</span> -
+      <span class="search-out-date">{{searchSpec.outDate | date: 'dd/MM/yyyy'}}</span> -
+      <span class="search-guests">{{searchSpec.guests}} huéspedes</span> -
+    </div>
     <a class="toggler" href="#">Modificar la búsqueda</a>
-  </span>
+  </div>
 </div>

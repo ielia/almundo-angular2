@@ -7,12 +7,18 @@
   text-align: center;
 }
 
+@media (max-width: 1039px) {
+  .top-nav {
+    display: none
+  }
+}
+
 .top-nav li {
   display: inline-block;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  width: 90px;
+  width: 85px;
 }
 
 .top-nav li a {

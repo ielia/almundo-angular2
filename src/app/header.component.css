@@ -42,6 +42,10 @@
 }
 
 .persona {
+  background-image: url("/assets/images/person_white.svg");
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
 
 .club-almundo {
@@ -51,7 +55,46 @@
 }
 
 .phone-icon {
+  background-image: url("/assets/images/phone_white.svg");
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
 
 .hamburger {
+  background-image: url("/assets/images/menu_white.svg");
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+@media(max-width: 1039px) {
+  .desktop, .header-sep {
+    display: none;
+  }
+
+  .header {
+    background-color: #002c77;
+    background-image: none;
+  }
+
+  .header-container {
+    line-height: 50px;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .leftmost {
+    margin-left: 5%;
+  }
+
+  .rightmost {
+    margin-right: 5%;
+  }
+}
+
+@media(min-width: 1040px) {
+  .mobile {
+    display: none;
+  }
 }
